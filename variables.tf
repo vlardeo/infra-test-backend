@@ -19,3 +19,24 @@ variable "environment" {
   type        = string
   description = "Environment name (staging|production)"
 }
+
+variable "vpc_cidr" {
+  type        = string
+  description = "VPC CIDR"
+}
+
+variable "public_subnet_cidrs" {
+  type        = list(string)
+  description = "Public subnet CIDRs"
+}
+
+variable "private_subnet_cidrs" {
+  type        = list(string)
+  description = "Private subnet CIDRs"
+}
+
+variable "nat_mode" {
+  type        = string
+  description = "NAT mode: single | per_az"
+  default     = "per_az"
+}
